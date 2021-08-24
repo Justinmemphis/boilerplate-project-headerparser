@@ -10,6 +10,11 @@ To Do:
 require('dotenv').config();
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+
+// enable bodyParser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC
