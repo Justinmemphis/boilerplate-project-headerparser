@@ -42,8 +42,9 @@ app.get("/api/whoami", function (req, res, next) {
   if (ip.substr(0,7) == "::ffff:") {
     ip = ip.substr(7)
   };
-  console.log("ip", ip)
-  res.json({ipaddress: ip})
+  console.log("ip", ip);
+  console.log("remote ip", request.headers["x-forwarded-for"]);
+  res.json({ipaddress: ip});
 });
 
 
