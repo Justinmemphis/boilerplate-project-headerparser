@@ -38,7 +38,7 @@ app.get("/api/hello", function (req, res) {
 */
 
 app.get("/api/whoami", function (req, res, next) {
-  var ip = req.ip;
+  var ip = req.ips;
   if (ip.substr(0,7) == "::ffff:") {
     ip = ip.substr(7)
   };
