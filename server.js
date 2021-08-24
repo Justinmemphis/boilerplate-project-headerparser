@@ -42,12 +42,11 @@ app.get("/api/hello", function (req, res) {
 
 app.get("/api/whoami", function (req, res, next) {
   var ip = req.ip;
+  var languageBrowser = req.headers["accept-language"];
   if (ip.substr(0,7) == "::ffff:") {
     ip = ip.substr(7)
   };
-  console.log("ip", ip);
-  console.log("remote ip", req.headers["x-forwarded-for"]);
-  res.json({ipaddress: ip});
+  res.json({ipaddress: ip, language: languageBrowser});
 });
 
 
