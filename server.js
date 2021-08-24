@@ -38,7 +38,8 @@ app.get("/api/hello", function (req, res) {
 */
 
 app.get("/api/whoami", function (req, res, next) {
-  console.log("ip", req.ip)
+  var ip = req.ip;
+  console.log("ip", ip)
   res.json({ipaddress: ip})
 });
 
