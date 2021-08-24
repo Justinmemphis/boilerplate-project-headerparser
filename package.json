@@ -1,6 +1,7 @@
 {
 	"name": "request_header",
-	"version": "0.0.1",
+	"author": "Justin Carter",
+	"version": "0.0.2",
 	"description": "API project for freeCodeCamp",
 	"main": "server.js",
 	"scripts": {
@@ -9,7 +10,8 @@
 	"dependencies": {
 		"express": "^5.0.0-alpha.2",
 		"cors": "^2.8.1",
-		"dotenv": "^8.2.0"
+		"dotenv": "^8.2.0",
+		"body-parser": "^1.19.0"
 	},
 	"repository": {
 		"type": "git",
