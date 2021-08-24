@@ -16,6 +16,9 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// return real IP address even if behind proxy
+app.set("trust proxy", true);
+
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC
 var cors = require('cors');
@@ -43,7 +46,7 @@ app.get("/api/whoami", function (req, res, next) {
     ip = ip.substr(7)
   };
   console.log("ip", ip);
-  console.log("remote ip", req.socket.remoteAddress);
+  console.log("remote ip", req.headers["x-forwarded-for"]);
   res.json({ipaddress: ip});
 });
 
