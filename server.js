@@ -31,10 +31,16 @@ app.get("/", function (req, res) {
 
 
 // your first API endpoint...
+/*
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
+*/
 
+app.get("/", function (req, res, next) {
+  console.log("ip", req.ip)
+  res.send({})
+});
 
 
 // listen for requests :)
