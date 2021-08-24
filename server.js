@@ -37,7 +37,7 @@ app.get("/api/hello", function (req, res) {
 });
 */
 
-app.get("/", function (req, res, next) {
+app.get("/api/whoami", function (req, res, next) {
   console.log("ip", req.ip)
   res.send({})
 });
