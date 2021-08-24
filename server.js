@@ -38,12 +38,12 @@ app.get("/api/hello", function (req, res) {
 */
 
 app.get("/api/whoami", function (req, res, next) {
-  var ips = req.ips;
-  if (ips.substr(0,7) == "::ffff:") {
-    ip = ips.substr(7)
+  var ip = req.ip;
+  if (ip.substr(0,7) == "::ffff:") {
+    ip = ip.substr(7)
   };
-  console.log("ip", ips)
-  res.json({ipaddress: ips})
+  console.log("ip", ip)
+  res.json({ipaddress: ip})
 });
 
 
